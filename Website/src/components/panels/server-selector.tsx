@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import ServerPopup from '../server-popup';
 import Link from 'next/link';
+import type { session } from '../../types/datatypes';
 
 function Feed() {
 	const [showModal, setShowModal] = useState(false);
+<<<<<<< HEAD:Website/src/components/panels/server-selector.tsx
 
+=======
+	const { data: session } = useSession();
+	console.log(session);
+	console.log(session.guilds);
+>>>>>>> dc48aca885499e5b74d3e2bb89859c7494e36cc7:Website/components/panels/server-selector.tsx
 	return (
 		<div className="server-selector">
 			<ServerPopup
@@ -18,6 +25,12 @@ function Feed() {
 					</svg>
 				</Link>
 			</div>
+<<<<<<< HEAD:Website/src/components/panels/server-selector.tsx
+=======
+			{session.guilds.map(item => (
+				<GuildIcon guild={item} key={item.id} />
+			))}
+>>>>>>> dc48aca885499e5b74d3e2bb89859c7494e36cc7:Website/components/panels/server-selector.tsx
 			<div className="server-icon-bg" data-toggle="tooltip" data-placement="right" title="Add a server">
 				<button onClick={(() => setShowModal(true))} className="btn">
 					<svg aria-hidden="false" className="icon" width="32" height="32" viewBox="0 0 24 24" type="button" data-toggle="modal" data-target="#exampleModalCenter">

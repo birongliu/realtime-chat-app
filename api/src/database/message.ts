@@ -30,16 +30,15 @@ export async function fetchMessage({ id }: fetchMessage) {
 }
 
 type createMessage = {
-		text: string
-		userId: string
-		channelId: string
+	text: string
+	userId: string
+	channelId: string
 }
 
 export async function createMessage(data: createMessage) {
 	return client.message.create({
 		data: {
 			text: data.text,
-			attachment: '',
 			author: {
 				connect: {
 					id: data.userId,

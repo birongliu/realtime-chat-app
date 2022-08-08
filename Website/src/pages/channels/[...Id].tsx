@@ -10,7 +10,11 @@ import type { GetServerSidePropsContext } from 'next';
 interface Props {
 	server: Guild
 	APIURL: string
+<<<<<<< HEAD:Website/src/pages/channels/[...Id].tsx
 	messages: string[]
+=======
+	messages: Array<any>
+>>>>>>> dc48aca885499e5b74d3e2bb89859c7494e36cc7:Website/pages/channels/[...Id].tsx
 }
 
 function HomePage({ server, APIURL, messages }: Props) {
@@ -32,7 +36,11 @@ function HomePage({ server, APIURL, messages }: Props) {
 			<div className="container-fluid">
 				<div className="row" style={{ height: '100vh' }}>
 					<ServerSelector />
+<<<<<<< HEAD:Website/src/pages/channels/[...Id].tsx
 					<ChannelSelector guild={server}/>
+=======
+					<ChannelSelector guild={server} type="GUILD"/>
+>>>>>>> dc48aca885499e5b74d3e2bb89859c7494e36cc7:Website/pages/channels/[...Id].tsx
 					<TextSection API={APIURL} messages={messages}/>
 					<MemberSection guild={server}/>
 				</div>

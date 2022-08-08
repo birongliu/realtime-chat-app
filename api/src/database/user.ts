@@ -2,7 +2,7 @@ import client from './index';
 
 type createUser = {
 	email: string
-	name: string
+	username: string
 	password: string
 }
 
@@ -11,7 +11,7 @@ export function createUser(data: createUser) {
 	return client.user.create({
 		data: {
 			email: data.email,
-			username: data.name,
+			username: data.username,
 			password: data.password,
 		},
 	});
@@ -29,17 +29,11 @@ export function	findUser(data: findUser) {
 			where: {
 				email: data.email,
 			},
-			include: {
-				servers: true,
-			},
 		});
 	} else if (data.id) {
 		return client.user.findUnique({
 			where: {
 				id: data.id,
-			},
-			include: {
-				servers: true,
 			},
 		});
 	}

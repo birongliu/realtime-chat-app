@@ -17,8 +17,13 @@ router
 	})
 	.get('/:id', async (req, res) => {
 		try {
+<<<<<<< HEAD
 			const data = await fetchServer({ id: req.params.id });
 			res.json(data);
+=======
+			const server = await fetchServer({ id: req.params.id });
+			res.json(server ?? { error: 'no guild' });
+>>>>>>> dc48aca885499e5b74d3e2bb89859c7494e36cc7
 		} catch (err) {
 			console.log(err);
 			res.json({ error: 'An error occured when fetching server' });
